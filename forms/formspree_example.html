@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formspree Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        input[type="submit"] {
+            padding: 8px;
+            width: 100%;
+        }
+        textarea {
+            height: 150px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            max-width: 200px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .info {
+            background-color: #f8f9fa;
+            border-left: 4px solid #17a2b8;
+            padding: 10px 15px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formspree Example</h1>
+    
+    <div class="info">
+        <p>This is an example of how to use <a href="https://formspree.io/" target="_blank">Formspree</a> to handle form submissions without requiring PHP or server-side code.</p>
+        <p>To use this in your website:</p>
+        <ol>
+            <li>Replace <code>info@centeredfamily.org</code> in the form action with your actual email address (already done)</li>
+            <li>Copy the form HTML into your website</li>
+            <li>Style it to match your website design</li>
+        </ol>
+    </div>
+    
+    <!-- Formspree Form Example -->
+    <form action="https://formspree.io/f/info@centeredfamily.org" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" required></textarea>
+        </div>
+        
+        <!-- Optional: Anti-spam honeypot field -->
+        <input type="text" name="_gotcha" style="display:none">
+        
+        <div class="form-group">
+            <input type="submit" value="Send Message">
+        </div>
+    </form>
+    
+    <div class="info">
+        <h3>How It Works</h3>
+        <p>When a user submits this form:</p>
+        <ol>
+            <li>The data is sent to Formspree's servers</li>
+            <li>Formspree forwards the submission to your email address</li>
+            <li>The user is redirected to a thank you page (or you can specify a custom redirect)</li>
+        </ol>
+        <p>Formspree offers a free tier that allows up to 50 submissions per month. For more submissions or additional features, they offer paid plans.</p>
+        
+        <h3>Integration with Your Website</h3>
+        <p>To integrate this with your existing website:</p>
+        <ol>
+            <li>Update your HTML files that contain forms</li>
+            <li>Change the form action from <code>forms/contact.php</code> to <code>https://formspree.io/f/info@centeredfamily.org</code></li>
+            <li>Remove any PHP-specific classes or attributes if needed</li>
+        </ol>
+        
+        <h3>Other Form Services</h3>
+        <p>Similar services include:</p>
+        <ul>
+            <li><a href="https://formsubmit.co/" target="_blank">FormSubmit</a></li>
+            <li><a href="https://getform.io/" target="_blank">Getform</a></li>
+            <li><a href="https://www.netlify.com/products/forms/" target="_blank">Netlify Forms</a> (if hosting on Netlify)</li>
+        </ul>
+    </div>
+</body>
+</html>
